@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile</title>
+        <style type="text/css">
+            .header
+            {
+                background-color: #F5F5F5;
+                padding: 20px;
+                text-align: left;
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0px;
+                color: #212121;
+                padding-left: 10px;
+            }
+            h2
+            {
+              background-color: #BF360C;
+              padding: 10px;
+              text-align: left;
+              font-family: Arial, Helvetica, sans-serif;
+              margin-bottom: 0px;
+              margin-top: 0px;
+              color: #FBE9E7;
+            }
+            .page
+            {
+                background-color: #FBE9E7;
+                margin: 0px;
+            }
+            body
+            {
+              color: #F57F17;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+            input[type=text], input[type=password], input[type=number], input[type=email] 
+            {
+              width: 60%;
+              padding: 12px 20px;
+              margin: 8px 0px;
+              box-sizing: border-box;
+              border: 3px solid #FFA726;
+              -webkit-transition: 0.5s;
+              transition: 0.5s;
+              outline: none;
+              border-radius: 3px;
+            }
+            input[type=number]:focus
+            {
+              border: 3px solid #FF7043;
+            }
+            a:link, a:visited 
+            {
+                background-color: #F9A825;
+                color: #FAFAFA;
+                padding: 14px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block; 
+                margin-top: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                min-width: 130px;
+                border-radius: 3px;
+            }
+            a:hover, a:active {
+                background-color: #EF6C00;
+            }
+            input[type=button], input[type=submit], input[type=reset]
+            {
+              background-color: #EF6C00;
+              border: none;
+              color: white;
+              padding: 16px 32px;
+              text-decoration: none;
+              margin: 4px 2px;
+              margin-top: 30px;
+              cursor: pointer;
+              border-radius: 3px;
+            }
+            .container
+            {
+                background-color: #FBE9E7;
+                padding: 1%;
+                padding-top: 10px;
+                border-radius: 3px;
+                margin: auto;
+                margin-top: 50px;
+                width: 60%;
+                min-width: 475px;
+                height: 75%;
+                border-radius: 3px;
+                border: 1px #FF6F00 solid;
+                box-sizing: border-box;
+                margin-bottom: 30px;
+            }
+            .navbar
+            {
+                background: #E65100;
+                margin-top: 0;
+                text-decoration: none;
+                list-style-type: none;
+                overflow: hidden;
+                color: #F1F8E9
+            }
+            li
+            {
+                float: left;
+                margin: 5px;
+            }
+            ul
+            {
+                padding: 5px;
+                padding-top: 0px;
+            }
+            .navbar a
+            {
+                margin: 0px;
+                margin-top: 8px;
+                padding: 0px;
+                min-width: 10px;
+                background-color: #E65100;
+            }
+        </style>
+        <h1 class="header">Webflix</h1>
+        <h2>Profile</h2>
+        <ul class="navbar">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/detail">Films</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+</head>
+    <body class="page">
+        <div class="container">
+            <form action="/profile">
+                <h4>List of Purchased Films</h4>
+                <br/>
+                <div>
+                    <%
+                        for (int Counter = 0; Counter < stoi(context["size"]); Counter++)
+                        {
+                    %>
+                    <br/>
+                    <%
+                                cout << context[to_string(Counter)];
+                             }
+                    %>
+                </div>
+             </form>
+        </div>
+        <div class="container">
+            <form action="/profile">
+                <h4>Add Credit to your Account</h4>
+                <%
+                  cout << context["amount"] << "$";
+                %>
+                <br/>
+              <span>
+                <input type="number" name="money" placeholder="Amount" />
+                </span>
+                <input type="submit" />
+            </form>
+    </body>
+</html>

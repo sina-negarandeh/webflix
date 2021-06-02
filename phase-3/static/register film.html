@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register film</title>
+    <style type="text/css">
+            .header
+            {
+                background-color: #F5F5F5;
+                padding: 20px;
+                text-align: left;
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0px;
+                color: #212121;
+                padding-left: 10px;
+            }
+            h2
+            {
+              background-color: #D32F2F;
+              padding: 10px;
+              text-align: left;
+              font-family: Arial, Helvetica, sans-serif;
+              margin-bottom: 0px;
+              margin-top: 0px;
+              color: #FFEBEE;
+            }
+            .page
+            {
+                background-color: #FFEBEE;
+                margin: 0px;
+            }
+        input[type=text], input[type=password], input[type=number], input[type=email] 
+            {
+              width: 60%;
+              padding: 12px 20px;
+              margin: 8px 80px;
+              box-sizing: border-box;
+              border: 3px solid #EF9A9A;
+              -webkit-transition: 0.5s;
+              transition: 0.5s;
+              outline: none;
+              border-radius: 3px;
+            }
+            input[type=text]:focus
+            {
+              border: 3px solid #EF5350;
+            }
+            input[type=password]:focus
+            {
+              border: 3px solid #EF5350;
+            }
+            input[type=number]:focus
+            {
+              border: 3px solid #EF5350;
+            }
+            input[type=email]:focus
+            {
+              border: 3px solid #EF5350;
+            }
+            input[type=button], input[type=submit], input[type=reset]
+            {
+              background-color: #E53935;
+              border: none;
+              color: white;
+              padding: 16px 32px;
+              text-decoration: none;
+              margin: 4px 2px;
+              margin-top: 30px;
+              cursor: pointer;
+              border-radius: 3px;
+            }
+            body
+            {
+              color: #EF5350;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+            .container
+            {
+                background-color: #FFEBEE;
+                padding: 1%;
+                padding-top: 30px;
+                border-radius: 3px;
+                margin: auto;
+                margin-top: 50px;
+                width: 35%;
+                min-width: 475px;
+                height: 75%;
+                border-radius: 3px;
+                border: 1px #EF9A9A solid;
+                box-sizing: border-box;
+                margin-bottom: 30px;
+            }
+            .navbar
+            {
+                background: #F44336;
+                margin-top: 0;
+                text-decoration: none;
+                list-style-type: none;
+                overflow: hidden;
+                color: #F1F8E9
+            }
+            li
+            {
+                float: left;
+                margin: 5px;
+            }
+            ul
+            {
+                padding: 5px;
+                padding-top: 5px;
+            }
+            .navbar a
+            {
+                text-decoration: none;
+                margin: 0px;
+                margin-top: 8px;
+                padding: 0px;
+                min-width: 10px;
+                background-color: #F44336;
+                color: #FFEBEE;
+            }
+    </style>
+        <h1 class="header">Webflix</h1>
+        <h2>Register film</h2>
+        <ul class="navbar">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/detail">Films</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+  </head>
+  <body class="page">
+    <div class="container">
+      <form action="/register" method="post">
+        <div>
+          <input name="name" type="text" placeholder="Name" />
+        </div>
+        <div>
+          <input name="length" type="number" placeholder="Length" />
+        </div>
+        <div>
+          <input name="price" type="number" placeholder="Price" />
+        </div>
+        <div>
+          <input name="year" type="number" placeholder="Year" />
+        </div>
+        <div>
+          <input name="director" type="text" placeholder="Director" />
+        </div>
+        <div>
+          <input name="summary" type="text" placeholder="Summary" />
+        </div>
+        <input type="submit" value="Register">
+      </form>
+    </div>
+  </body>
+</html>

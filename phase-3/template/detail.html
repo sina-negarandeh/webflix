@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Film Details</title>
+        <style type="text/css">
+            .header
+            {
+                background-color: #F5F5F5;
+                padding: 20px;
+                text-align: left;
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0px;
+                color: #212121;
+                padding-left: 10px;
+            }
+            h2
+            {
+              background-color: #4A148C;
+              padding: 10px;
+              text-align: left;
+              font-family: Arial, Helvetica, sans-serif;
+              margin-bottom: 0px;
+              margin-top: 0px;
+              color: #FCE4EC;
+            }
+            .page
+            {
+                background-color: #FCE4EC;
+                margin: 0px;
+            }
+            body
+            {
+              color: #9C27B0;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+            input[type=text], input[type=password], input[type=number], input[type=email] 
+            {
+              width: 60%;
+              padding: 12px 20px;
+              margin: 8px 0px;
+              box-sizing: border-box;
+              border: 3px solid #BA68C8;
+              -webkit-transition: 0.5s;
+              transition: 0.5s;
+              outline: none;
+              border-radius: 3px;
+            }
+            input[type=number]:focus
+            {
+              border: 3px solid #9C27B0;
+            }
+            input[type=text]:focus
+            {
+              border: 3px solid #9C27B0;
+            }
+            a:link, a:visited 
+            {
+                background-color: #BA68C8;
+                color: #FAFAFA;
+                padding: 14px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block; 
+                margin-top: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                min-width: 130px;
+                border-radius: 3px;
+            }
+            a:hover, a:active {
+                background-color: #9C27B0;
+            }
+            input[type=button], input[type=submit], input[type=reset]
+            {
+              background-color: #9C27B0;
+              border: none;
+              color: white;
+              padding: 16px 32px;
+              text-decoration: none;
+              margin: 4px 2px;
+              margin-top: 10px;
+              cursor: pointer;
+              border-radius: 3px;
+            }
+            .container
+            {
+                background-color: #FCE4EC;
+                padding: 1%;
+                padding-top: 10px;
+                border-radius: 3px;
+                margin: auto;
+                margin-top: 50px;
+                width: 60%;
+                min-width: 475px;
+                height: 75%;
+                border-radius: 3px;
+                border: 1px #7B1FA2 solid;
+                box-sizing: border-box;
+                margin-bottom: 30px;
+            }
+            .navbar
+            {
+                background: #6A1B9A;
+                margin-top: 0;
+                text-decoration: none;
+                list-style-type: none;
+                overflow: hidden;
+                color: #FCE4EC
+            }
+            li
+            {
+                float: left;
+                margin: 5px;
+            }
+            ul
+            {
+                padding: 5px;
+                padding-top: 0px;
+            }
+            .navbar a
+            {
+                margin: 0px;
+                margin-top: 8px;
+                padding: 0px;
+                min-width: 10px;
+                background-color: #6A1B9A;
+            }
+            h4
+            {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            .films a 
+            {
+                background: none;
+                color: #00897B;
+            }
+            .recommendation a
+            {
+                background: none;
+                color: #9C27B0;
+            }
+        </style>
+        <h1 class="header">Webflix</h1>
+        <h2>Film Details</h2>
+        <ul class="navbar">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+</head>
+<body class="page">
+    <div class="container">
+        <form action="/detail">
+        <span>
+            <input type="text" name="filmid" placeholder="Enter a Film ID" />
+        </span>
+        <input type="submit" />
+    </form>
+    </div>
+    <div class="container">
+        <h4>Details of Film</h4>
+        <div>
+            <%
+                cout << "Name: " << context["name"];
+            %>
+        </div>
+        <div>
+            <%
+                cout << "Lengrh: " << context["length"];
+            %>
+        </div>
+        <div>
+            <%
+                cout << "Price: " << context["price"];
+            %>
+        </div>
+        <div>
+            <%
+                cout << "Rate: " << context["rate"];
+            %>
+        </div>
+        <div>
+            <%
+                cout << "Year: " << context["year"];
+            %>
+        </div>
+        <div>
+            <%
+                cout << "Director: " << context["director"];
+            %>
+        </div>
+        <div>
+            <%
+                cout << "Summary: " << context["summary"];
+            %>
+        </div>
+    </div>
+    <div class="container">
+        <form action="/detail">
+            <h4>Buy or Rate This Film</h4>
+            <br/>
+            <%
+                cout << context["buy"];
+            %>
+            <br/>
+            </form>
+            <%
+                cout << context["form"];
+            %>
+    </div>
+    <div class="container">
+        <h4>Recommended Films</h4>
+        <div class="recommendation">
+            <%
+                for (int Counter = 0; Counter < stoi(context["size"]); Counter++)
+                {
+            %>
+            <br/>
+            <%
+                    cout << context[to_string(Counter)];
+                }
+            %>
+        </div>
+    </div>
+    <div class="container">
+        <h4>Comments</h4>
+        <div class="comments">
+            <%
+            for (int Counter = stoi(context["size"]); Counter < stoi(context["endsize"]) + stoi(context["size"]); Counter++)
+            {
+                
+            %>
+            <br/>
+            <br/>
+            <%
+                cout << context[to_string(Counter)];
+            }
+            %>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/film">
+        Choose color :
+        <span>
+            <input type="radio" name="color" value="red" checked> Red
+            <input type="radio" name="color" value="navy"> Navy
+            <input type="radio" name="color" value="green"> Green
+        </span>
+        <br>
+        <span>
+            Your name :
+            <input type="text" name="name" />
+        </span>
+        <input type="submit" />
+    </form>
+
+    <%
+        if(context["color"] == "red")
+        {
+    %>
+    <div style="color:red; height: 10px;">
+        <%
+                cout << context["name"];
+        %>
+    </div>
+    <%
+        }
+    %>
+    <%
+        if(context["color"] == "navy")
+        {
+    %>
+    <div style="color:navy; height: 10px;">
+        <%
+                cout << context["name"];
+            %>
+    </div>
+    <%
+        }
+    %>
+    <%
+        if(context["color"] == "green")
+        {
+    %>
+    <div style="color:green; height: 10px;">
+        <%
+                cout << context["name"];
+            %>
+    </div>
+    <%
+        }
+    %>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Film Details</title>
+        <style type="text/css">
+            .header
+            {
+                background-color: #F5F5F5;
+                padding: 20px;
+                text-align: left;
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0px;
+                color: #212121;
+                padding-left: 10px;
+            }
+            h2
+            {
+              background-color: #4A148C;
+              padding: 10px;
+              text-align: left;
+              font-family: Arial, Helvetica, sans-serif;
+              margin-bottom: 0px;
+              margin-top: 0px;
+              color: #FCE4EC;
+            }
+            .page
+            {
+                background-color: #FCE4EC;
+                margin: 0px;
+            }
+            body
+            {
+              color: #9C27B0;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+            input[type=text], input[type=password], input[type=number], input[type=email] 
+            {
+              width: 60%;
+              padding: 12px 20px;
+              margin: 8px 0px;
+              box-sizing: border-box;
+              border: 3px solid #BA68C8;
+              -webkit-transition: 0.5s;
+              transition: 0.5s;
+              outline: none;
+              border-radius: 3px;
+            }
+            input[type=number]:focus
+            {
+              border: 3px solid #9C27B0;
+            }
+            input[type=text]:focus
+            {
+              border: 3px solid #9C27B0;
+            }
+            a:link, a:visited 
+            {
+                background-color: #F9A825;
+                color: #FAFAFA;
+                padding: 14px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block; 
+                margin-top: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                min-width: 130px;
+                border-radius: 3px;
+            }
+            a:hover, a:active {
+                background-color: #EF6C00;
+            }
+            input[type=button], input[type=submit], input[type=reset]
+            {
+              background-color: #9C27B0;
+              border: none;
+              color: white;
+              padding: 16px 32px;
+              text-decoration: none;
+              margin: 4px 2px;
+              margin-top: 10px;
+              cursor: pointer;
+              border-radius: 3px;
+            }
+            .container
+            {
+                background-color: #FCE4EC;
+                padding: 1%;
+                padding-top: 10px;
+                border-radius: 3px;
+                margin: auto;
+                margin-top: 50px;
+                width: 60%;
+                min-width: 475px;
+                height: 75%;
+                border-radius: 3px;
+                border: 1px #7B1FA2 solid;
+                box-sizing: border-box;
+                margin-bottom: 30px;
+            }
+            .navbar
+            {
+                background: #6A1B9A;
+                margin-top: 0;
+                text-decoration: none;
+                list-style-type: none;
+                overflow: hidden;
+                color: #FCE4EC
+            }
+            li
+            {
+                float: left;
+                margin: 5px;
+            }
+            ul
+            {
+                padding: 5px;
+                padding-top: 0px;
+            }
+            .navbar a
+            {
+                margin: 0px;
+                margin-top: 8px;
+                padding: 0px;
+                min-width: 10px;
+                background-color: #6A1B9A;
+            }
+            h4
+            {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+        </style>
+        <h1 class="header">Network</h1>
+        <h2>Film Details</h2>
+        <ul class="navbar">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+</head>
+    <body class="page">
+        <div class="container">
+            <form action="/film">
+                <span>
+                    <input type="text" name="id" placeholder="Enter FilmID for Details" />
+                </span>
+                <input type="submit" />
+            </form>
+                <form action="/film">
+                    <h4>Details of Film</h4>
+                    <br/>
+                    <div>
+                    <%
+                        cout << context["name"];
+                    %>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+-->
+
+
+
+
+
+
+
+
+
+            <!--
+            <div class="container">
+                <form action="/film">
+                    <h4>Details of Film</h4>
+                    <br/>
+                    <div>
+                        <%
+                            cout << "Name: " << context["name"];
+                        %>
+                        <br/>
+                        <%
+                            cout << "Length: " << context["length"];
+                        %>
+                        <br/>
+                        <%
+                            cout << "Price: " << context["price"];
+                        %>
+                        <br/>
+                        <%
+                            cout << "Rate: " << context["rate"];
+                        %>
+                        <br/>
+                        <%
+                            cout << "Year: " << context["year"];
+                        %>
+                        <br/>
+                        <%
+                            cout << "Director: " << context["director"];
+                        %>
+                        <br/>
+                        <%
+                            cout << "Summary: " << context["summary"];
+                        %>
+                  </div>
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <form action="/film">
+                <h4>Buy or Rate This Film</h4>
+                <br/>
+                <form class="buy" action="/film">
+                    <input type="submit" value="Buy" />
+                </form>
+              <span>
+                <input type="number" name="rate" placeholder="Rate" />
+                </span>
+                <input type="submit" />
+            </form>
+            <form action="/film">
+                <span>
+                <input type="text" name="comment" placeholder="Comment" />
+                </span>
+                <input type="submit" />
+            </form>
+        </div>
+        <div class="container">
+                <form action="/film">
+                    <h4>Recommended Films</h4>
+                    <br/>
+                    <div>
+                        <%
+                            for (int Counter = 0; Counter < stoi(context["size"]); Counter++)
+                                {
+                        %>
+                        <br/>
+                        <%
+                                    cout << context[to_string(Counter)];
+                                }
+                        %>
+                  </div>
+                </form>
+            </div>
+            -->
